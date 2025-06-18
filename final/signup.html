@@ -76,19 +76,34 @@
     <script>
         document.getElementById('signupForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const userId = document.getElementById('userId').value;
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirmPassword').value;
+            const userId = document.getElementById('userId').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
             
+            // 1. 필수 입력 확인
             if (!userId || !password || !confirmPassword) {
                 alert('모든 필드를 입력해주세요.');
                 return;
             }
             
+            // 2. 비밀번호 일치 확인
             if (password !== confirmPassword) {
                 alert('비밀번호가 일치하지 않습니다.');
                 return;
             }
+
+            // 3. 기존 사용자 데이터 불러오기
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+            
+            // 4. 아이디 중복 확인
+            if (users[userId]) {
+                alert('이미 존재하는 아이디입니다.');
+                return;
+            }
+
+            // 5. 회원 정보 저장
+            users[userId] = password;
+            localStorage.setItem('users', JSON.stringify(users));
             
             alert('회원가입이 완료되었습니다.');
             location.href = 'login.html';
