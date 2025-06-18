@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>홍대~지평</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            background-color: #f8f9fa;
+        }
+        .route-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .route-title {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .stations-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+        .station {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            transition: opacity 0.3s;
+            border: 2px solid #333;
+        }
+        .station.available {
+            background-color: #00CED1;
+            color: white;
+        }
+        .station.unavailable {
+            background-color: #e9ecef;
+            color: #666;
+            cursor: not-allowed;
+        }
+        .station.available:hover {
+            opacity: 0.8;
+        }
+        .line {
+            width: 20px;
+            height: 3px;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="route-container">
+        <h1 class="route-title">홍대~지평</h1>
+        <div class="stations-container">
+            <div class="station available" onclick="location.href='review-hongdae.html'">홍대입구</div>
+            <div class="line"></div>
+            <div class="station unavailable">서강대</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-gongdeok.html'">공덕</div>
+            <div class="line"></div>
+            <div class="station unavailable">효창공원앞</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-yongsan.html'">용산</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-ichon.html'">이촌</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-seobinggo.html'">서빙고</div>
+            <div class="line"></div>
+            <div class="station unavailable">한남</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-oksu.html'">옥수</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-eungbong.html'">응봉</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-wangsimni.html'">왕십리</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-cheongnyangni.html'">청량리</div>
+            <div class="line"></div>
+            <div class="station unavailable">회기</div>
+            <div class="line"></div>
+            <div class="station unavailable">중랑</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-sangbong.html'">상봉</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-mangwoo.html'">망우</div>
+            <div class="line"></div>
+            <div class="station unavailable">양원</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-guri.html'">구리</div>
+            <div class="line"></div>
+            <div class="station unavailable">도농</div>
+            <div class="line"></div>
+            <div class="station unavailable">양정</div>
+            <div class="line"></div>
+            <div class="station unavailable">덕소</div>
+            <div class="line"></div>
+            <div class="station unavailable">도심</div>
+            <div class="line"></div>
+            <div class="station unavailable">팔당</div>
+            <div class="line"></div>
+            <div class="station unavailable">운길산</div>
+            <div class="line"></div>
+            <div class="station unavailable">양수</div>
+            <div class="line"></div>
+            <div class="station unavailable">신원</div>
+            <div class="line"></div>
+            <div class="station unavailable">국수</div>
+            <div class="line"></div>
+            <div class="station unavailable">아신</div>
+            <div class="line"></div>
+            <div class="station unavailable">오빈</div>
+            <div class="line"></div>
+            <div class="station unavailable">양평</div>
+            <div class="line"></div>
+            <div class="station unavailable">원덕</div>
+            <div class="line"></div>
+            <div class="station unavailable">용문</div>
+            <div class="line"></div>
+            <div class="station available" onclick="location.href='review-jipyeong.html'">지평</div>
+        </div>
+    </div>
+</body>
+</html>

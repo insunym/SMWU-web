@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Malgun Gothic', Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .signup-container {
+            background: white;
+            padding: 30px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 280px;
+        }
+        .signup-title {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 25px;
+            color: #333;
+            font-weight: bold;
+        }
+        .input-group {
+            margin-bottom: 15px;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+            font-size: 14px;
+            box-sizing: border-box;
+        }
+        .signup-btn {
+            width: 100%;
+            padding: 12px;
+            background-color: #00CED1;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .signup-btn:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="signup-container">
+        <h2 class="signup-title">회원가입</h2>
+        <form id="signupForm">
+            <div class="input-group">
+                <input type="text" id="userId" placeholder="아이디 입력" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="password" placeholder="비밀번호 입력" required>
+            </div>
+            <div class="input-group">
+                <input type="password" id="confirmPassword" placeholder="비밀번호 확인" required>
+            </div>
+            <button type="submit" class="signup-btn">회원가입</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userId = document.getElementById('userId').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            
+            if (!userId || !password || !confirmPassword) {
+                alert('모든 필드를 입력해주세요.');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+            
+            alert('회원가입이 완료되었습니다.');
+            location.href = 'login.html';
+        });
+    </script>
+</body>
+</html>
