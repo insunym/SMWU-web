@@ -88,15 +88,30 @@
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const username = document.getElementById('username').value;
+            const username = document.getElementById('username').value.trim();
             const password = document.getElementById('password').value;
-            
-            if (username && password) {
-                localStorage.setItem('username', username);
-                location.href = 'section-select.html';
-            } else {
+
+            // users 객체 불러오기
+            const users = JSON.parse(localStorage.getItem('users')) || {};
+
+            if (!username || !password) {
                 alert('아이디와 비밀번호를 모두 입력해주세요.');
+                return;
             }
+
+            if (!users[username]) {
+                alert('존재하지 않는 아이디입니다. 회원가입을 해주세요.');
+                return;
+            }
+
+            if (users[username] !== password) {
+                alert('비밀번호가 일치하지 않습니다.');
+                return;
+            }
+
+            // 로그인 성공
+            localStorage.setItem('username', username);
+            location.href = 'section-select.html';
         });
     </script>
 </body>
