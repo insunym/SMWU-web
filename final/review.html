@@ -44,11 +44,9 @@
                 card.className = 'card';
                 card.dataset.station = station.name;
                 card.innerHTML = `
-                    <div>
-                        <a href="${station.url}">
+                    <a href="${station.url}">
                         <img src="${getMapImg(station.lat, station.lng)}" alt="${station.name}역" class="station-img">
-                        </a>
-                    <div>
+                    </a>
                     <span>${station.name}역 <span class="heart" data-station="${station.name}">♡</span></span>
 
                 `;
