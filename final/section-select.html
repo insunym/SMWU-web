@@ -3,63 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>구간 선택</title>
+    <link rel="stylesheet" href="basic.css">
+    <link rel="stylesheet" href="navibar.css">
+    <title>급하송</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Malgun Gothic', Arial, sans-serif;
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .section-container {
-            text-align: center;
-            background: white;
-            padding: 40px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-        .section-title {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 30px;
-        }
         .section-buttons {
+            background-color: #333;
+            width: 700px;
+            height: 250px;
+            border-radius: 200px;
             display: flex;
-            gap: 40px;
+            flex-direction: row;
+            align-items: center;
             justify-content: center;
+            gap: 30px;
         }
         .section-button {
-            width: 120px;
-            height: 120px;
+            align-items: center;
+            width: 195px;
+            height: 195px;
             border-radius: 50%;
-            background-color: #00CED1;
-            color: white;
-            font-size: 16px;
+            background-color: #D9D9D9;
+            color: #767676;
+            font-size: 2.5rem;
             font-weight: bold;
             border: 2px solid #333;
             cursor: pointer;
             transition: opacity 0.3s;
         }
         .section-button:hover {
-            opacity: 0.8;
+            color: white;
+            background-color: #78C4A3;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .section-buttons {
+                width: 200px;
+                height: 600px;
+                flex-direction: column;
+            }
+            .section-button {
+                width: 165px;
+                height: 165px;
+                border-radius: 50%;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="section-container">
-        <h1 class="section-title">구간 선택</h1>
-        <div class="section-buttons">
-            <button class="section-button" onclick="location.href='munsan-seoul.html'">
-                문산~<br>서울역
-            </button>
-            <button class="section-button" onclick="location.href='hongdae-jipyeong.html'">
-                홍대~<br>지평
-            </button>
+    <div class="main-container">
+        <div class="tabs">
+            <div class="tab active" onclick="location.href='section-select.html'">지도 보기</div>
+            <div class="tab" onclick="location.href='review.html'" >역 후기</div>
+            <div class="tab" onclick="location.href='favorites.html'">즐겨찾는 역</div>
+            <div class="tab" onclick="location.href='profile.html'">나의 정보</div>
+        </div>
+        <div class="content">
+            <h1 class="main-title2">구간 선택</h1>
+            <div class="section-buttons">
+                <button class="section-button" onclick="location.href='munsan-seoul.html'">
+                    문산~<br>서울역
+                </button>
+                <button class="section-button" onclick="location.href='hongdae-deokso.html'">
+                    홍대~<br>덕소
+                </button>
+                <button class="section-button" onclick="location.href='dosim-jipyeong.html'">
+                    도심~<br>지평
+                </button>
+            </div>
         </div>
     </div>
 </body>
